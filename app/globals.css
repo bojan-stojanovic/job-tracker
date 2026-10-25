@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Keyboard users need a clear indicator. Mouse clicks don't show it. */
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+/*
+ * Dark theme. Tailwind's utilities read these color variables at runtime,
+ * so redefining them here recolors every existing class without changes
+ * to the components.
+ */
+.dark {
+  color-scheme: dark;
+
+  --color-white: #1c1c1c;
+
+  --color-neutral-50: #0a0a0a;
+  --color-neutral-100: #171717;
+  --color-neutral-200: #262626;
+  --color-neutral-300: #404040;
+  --color-neutral-400: #525252;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #a3a3a3;
+  --color-neutral-700: #d4d4d4;
+  --color-neutral-800: #e5e5e5;
+  --color-neutral-900: #f5f5f5;
+
+  /* Status colors used by errors, success messages, and drop targets. */
+  --color-red-50: #3b1212;
+  --color-red-700: #fca5a5;
+  --color-green-700: #86efac;
+  --color-blue-50: #172554;
+  --color-blue-300: #1e40af;
+}
+
+body {
+  background: var(--color-neutral-50);
+  color: var(--color-neutral-900);
+}
